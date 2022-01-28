@@ -13,7 +13,5 @@ topics:
   - Advanced Security
 children:
   - /about-the-security-overview
-  - /viewing-the-security-overview
-  - /filtering-alerts-in-the-security-overview
 ---
 

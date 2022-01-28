@@ -1,6 +1,6 @@
 ---
-title: Trabajar con formato avanzado
-intro: 'Los formatos como tablas, resaltado de la sintaxis y enlace automático te permiten organizar la información compleja claramente en tus solicitudes de extracción, propuestas y comentarios.'
+title: Working with advanced formatting
+intro: 'Formatting like tables, syntax highlighting, and automatic linking allows you to arrange complex information clearly in your pull requests, issues, and comments.'
 redirect_from:
   - /articles/working-with-advanced-formatting
 versions:
@@ -16,6 +16,6 @@ children:
   - /attaching-files
   - /creating-a-permanent-link-to-a-code-snippet
   - /using-keywords-in-issues-and-pull-requests
-shortTitle: Trabajar con formato avanzado
+shortTitle: Work with advanced formatting
 ---
 

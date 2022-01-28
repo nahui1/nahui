@@ -25,6 +25,7 @@ Depois de adicionar uma nova chave SSH à sua conta em {% ifversion ghae %}{% da
 
 {% mac %}
 
+{% include tool-switcher %}
 {% webui %}
 
 1. Copie a chave pública SSH para a sua área de transferência.
@@ -55,6 +56,8 @@ Depois de adicionar uma nova chave SSH à sua conta em {% ifversion ghae %}{% da
 {% endmac %}
 
 {% windows %}
+
+{% include tool-switcher %}
 
 {% webui %}
 
@@ -87,6 +90,7 @@ Depois de adicionar uma nova chave SSH à sua conta em {% ifversion ghae %}{% da
 
 {% linux %}
 
+{% include tool-switcher %}
 {% webui %}
 
 1. Copie a chave pública SSH para a sua área de transferência.

@@ -68,9 +68,7 @@ Before you can use Jekyll to create a {% data variables.product.prodname_pages %
  If you chose to publish your site from the `gh-pages` branch, create and checkout the `gh-pages` branch.
  ```shell
  $ git checkout --orphan gh-pages
- # Creates a new branch, with no history or contents, called gh-pages, and switches to the gh-pages branch
- $ git rm -rf 
- # Removes the contents from your default branch from the working directory
+ # Creates a new branch, with no history or contents, called gh-pages and switches to the gh-pages branch
  ```
 1. To create a new Jekyll site, use the `jekyll new` command:
    ```shell
@@ -121,7 +119,6 @@ $ git remote add origin https://<em>HOSTNAME</em>/<em>USER</em>/<em>REPOSITORY</
 {% ifversion fpt or ghec %}
 {% data reusables.pages.choose-visibility %}{% endif %}
 {% data reusables.pages.visit-site %}
-{% data reusables.pages.check-workflow-run %}
 
 {% data reusables.pages.admin-must-push %}
 

@@ -12,6 +12,7 @@ miniTocMaxHeadingLevel: 3
 
 {% data reusables.actions.enterprise-beta %}
 {% data reusables.actions.enterprise-github-hosted-runners %}
+{% data reusables.actions.ae-beta %}
 
 ## About expressions
 
@@ -79,7 +80,7 @@ env:
 | ------------------------- | --------- |
 | `( )`                     | 論理グループ化   |
 | `[ ]`                     | インデックス    |
-| `から実行されます。`               | プロパティ参照外し |
+| `.`                       | プロパティ参照外し |
 | `!`                       | 否定        |
 | `<`                    | 小なり       |
 | `<=`                   | 以下        |
@@ -125,11 +126,11 @@ env:
 
 #### 配列の利用例
 
-`contains(github.event.issue.labels.*.name, 'bug')` returns whether the issue related to the event has a label "bug".
+`contains(github.event.issue.labels.*.name, 'bug')`
 
 #### 文字列の使用例
 
-`contains('Hello world', 'llo')` returns `true`.
+`contains('Hello world', 'llo')` は、`true` を返します。
 
 ### startsWith
 
@@ -139,7 +140,7 @@ env:
 
 #### サンプル
 
-`startsWith('Hello world', 'He')` は、`true` を返します.
+`startsWith('Hello world', 'He')` は、`true` を返します
 
 ### endsWith
 
@@ -149,7 +150,7 @@ env:
 
 #### サンプル
 
-`endsWith('Hello world', 'ld')` は、`true` を返します.
+`endsWith('Hello world', 'ld')` は、`true` を返します
 
 ### format
 
@@ -159,19 +160,19 @@ env:
 
 #### サンプル
 
+'Hello Mona the Octocat' を返します
+
 `format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat')`
 
-Returns 'Hello Mona the Octocat'.
-
 #### 括弧をエスケープするサンプル
+
+'{Hello Mona the Octocat!}'を返します。
 
 {% raw %}
 ```js
 format('{{Hello {0} {1} {2}!}}', 'Mona', 'the', 'Octocat')
 ```
 {% endraw %}
-
-Returns '{Hello Mona the Octocat!}'.
 
 ### join
 
@@ -266,9 +267,9 @@ jobs:
 
 `hashFiles('**/package-lock.json', '**/Gemfile.lock')`
 
-## ステータスチェック関数
+## ジョブステータスのチェック関数
 
-`if` 条件では、次のステータスチェック関数を式として使用できます。 A default status check of `success()` is applied unless you include one of these functions. For more information about `if` conditionals, see "[Workflow syntax for GitHub Actions](/articles/workflow-syntax-for-github-actions/#jobsjob_idif)" and "[Metadata syntax for GitHub Composite Actions](/actions/creating-actions/metadata-syntax-for-github-actions/#runsstepsif)".
+`if` 条件では、次のステータスチェック関数を式として使用できます。 A default status check of `success()` is applied unless you include one of these functions. `if` 条件に関する詳しい情報については、「[GitHub Actions のワークフロー構文](/articles/workflow-syntax-for-github-actions/#jobsjob_idif)」を参照してください。
 
 ### success
 
@@ -305,7 +306,7 @@ if: {% raw %}${{ cancelled() }}{% endraw %}
 
 ### failure
 
-ジョブの以前のステップのいずれかが失敗したなら`true`を返します。 If you have a chain of dependent jobs, `failure()` returns `true` if any ancestor job fails.
+ジョブの以前のステップのいずれかが失敗したなら`true`を返します。
 
 #### サンプル
 
@@ -315,32 +316,6 @@ steps:
   - name: The job has failed
     if: {% raw %}${{ failure() }}{% endraw %}
 ```
-
-### Evaluate Status Explicitly
-
-Instead of using one of the methods above, you can evaluate the status of the job or composite action that is executing the step directly:
-
-#### Example for workflow step
-
-```yaml
-steps:
-  ...
-  - name: The job has failed
-    if: {% raw %}${{ job.status == 'failure' }}{% endraw %}
-```
-
-This is the same as using `if: failure()` in a job step.
-
-#### Example for composite action step
-
-```yaml
-steps:
-  ...
-  - name: The composite action has failed
-    if: {% raw %}${{ github.action_status == 'failure' }}{% endraw %}
-```
-
-This is the same as using `if: failure()` in a composite action step.
 
 ## オブジェクトフィルタ
 

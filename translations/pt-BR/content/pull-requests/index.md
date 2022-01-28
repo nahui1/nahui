@@ -1,6 +1,6 @@
 ---
 title: Pull requests
-intro: Aprenda a fazer commit de alterações em um projeto e use pull requests para colaborar com os outros.
+intro: Learn how to commit changes to a project and use pull requests to collaborate with others.
 shortTitle: Pull requests
 versions:
   fpt: '*'

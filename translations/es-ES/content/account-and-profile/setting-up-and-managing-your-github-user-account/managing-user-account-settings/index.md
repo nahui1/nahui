@@ -1,9 +1,9 @@
 ---
-title: Administrar las configuraciones del usuario de la cuenta
-intro: 'Puedes cambiar varias configuraciones de tu cuenta personal, lo que incluye cambiar tu nombre de usuario y eliminar tu cuenta.'
+title: Managing user account settings
+intro: 'You can change several settings for your personal account, including changing your username and deleting your account.'
 redirect_from:
-  - /categories/29/articles
-  - /categories/user-accounts
+  - /categories/29/articles/
+  - /categories/user-accounts/
   - /articles/managing-user-account-settings
   - /github/setting-up-and-managing-your-github-user-account/managing-user-account-settings
 versions:
@@ -30,6 +30,6 @@ children:
   - /integrating-jira-with-your-personal-projects
   - /best-practices-for-leaving-your-company
   - /what-does-the-available-for-hire-checkbox-do
-shortTitle: Configuración de cuenta de usuario
+shortTitle: User account settings
 ---
 

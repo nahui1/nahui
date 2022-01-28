@@ -16,6 +16,7 @@ shortTitle: Add self-hosted runners
 {% data reusables.actions.ae-self-hosted-runners-notice %}
 {% data reusables.actions.enterprise-beta %}
 {% data reusables.actions.enterprise-github-hosted-runners %}
+{% data reusables.actions.ae-beta %}
 
 リポジトリ、Organization、Enterpriseにセルフホストランナーを追加できます。
 
@@ -82,13 +83,11 @@ Organization または Enterprise 管理者の場合は、Organization または
 
 ## セルフホストランナーを Enterprise に追加する
 
-{% ifversion fpt %}If you use {% data variables.product.prodname_ghe_cloud %}, you{% elsif ghec or ghes or ghae %}You{% endif %} can add self-hosted runners to an enterprise, where they can be assigned to multiple organizations. Organization の管理者は、そのランナーを使用できるリポジトリを制御できます。 {% ifversion fpt %}For more information, see the [{% data variables.product.prodname_ghe_cloud %} documentation](/enterprise-cloud@latest/actions/hosting-your-own-runners/adding-self-hosted-runners#adding-a-self-hosted-runner-to-an-enterprise).{% endif %}
-
-{% ifversion ghec or ghes or ghae %}
+セルフホストランナーを Enterprise に追加して、複数の Organization に割り当てることができます。 Organization の管理者は、そのランナーを使用できるリポジトリを制御できます。
 
 新しいランナーがデフォルトグループに割り当てられます。 ランナーを登録した後、ランナーのグループを変更できます。 詳しい情報については、「[セルフホストランナーへのアクセスを管理する](/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups#moving-a-self-hosted-runner-to-a-group)」を参照してください。
 
-{% ifversion ghec %}
+{% ifversion fpt or ghec %}
 セルフホストランナーを Enterprise アカウントに追加するには、Enterprise のオーナーである必要があります。 For information about how to add a self-hosted runner with the REST API, see the [Enterprise Administration GitHub Actions APIs](/rest/reference/enterprise-admin#github-actions).
 
 {% data reusables.enterprise-accounts.access-enterprise %}
@@ -108,11 +107,9 @@ Organization または Enterprise 管理者の場合は、Organization または
 1. [**Add new**] をクリックし、[**New runner**] をクリックします。
 {% data reusables.github-actions.self-hosted-runner-configure %}
 {% endif %}
-{% ifversion ghec or ghae or ghes %}
 {% data reusables.github-actions.self-hosted-runner-check-installation-success %}
 
 {% data reusables.github-actions.self-hosted-runner-public-repo-access %}
-{% endif %}
 
 ### Enterprise ランナーをリポジトリで利用可能にする
 
@@ -121,4 +118,3 @@ Organization または Enterprise 管理者の場合は、Organization または
 Enterprise レベルのセルフホストランナーグループを Organization リポジトリで使用できるようにするには、ランナーグループの Organization の継承設定を変更して、Organization 内のリポジトリでランナーを使用できるようにする必要がある場合があります。
 
 ランナーグループのアクセス設定の変更に関する詳しい情報については、「[グループを使用したセルフホストランナーへのアクセスを管理する](/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups#changing-the-access-policy-of-a-self-hosted-runner-group)」を参照してください。
-{% endif %}

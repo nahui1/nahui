@@ -16,5 +16,3 @@ After you connect your account on {% data variables.product.product_location %} 
 5. 開発するマシンタイプをクリックします。
 
    ![新しい {% data variables.product.prodname_codespaces %} のインスタンスタイプ](/assets/images/help/codespaces/choose-sku-vscode.png)
-
-   {% data reusables.codespaces.codespaces-machine-type-availability %}

@@ -19,7 +19,6 @@ Os proprietários da organização e gerentes de faturamento podem ver o uso do 
 
 {% data reusables.organizations.billing-settings %}
 {% data reusables.dotcom_billing.codespaces-minutes %}
-{% data reusables.dotcom_billing.codespaces-report-download %}
 
 ## Visualizando o uso de {% data variables.product.prodname_codespaces %} para sua conta corporativa
 

@@ -29,7 +29,7 @@ Você deve efetuar a autenticação como dono de uma organização do {% data va
 
 ### Mapear dados do SAML e SCIM
 
-{% data reusables.scim.nameid-and-username-must-match %}
+O SAML IdP e o cliente SCIM devem usar valores correspondentes ao `NameID` e `userName` para cada usuário. Isso permite que um usuário que faz autenticação através do SAML seja vinculado à sua identidade SCIM provisionada.
 
 ### Atributos de usuário de SCIM compatíveis
 

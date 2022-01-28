@@ -51,12 +51,6 @@ Se você adicionar uma lista de tarefas ao texto de um problema, isso significa 
 
 {% data reusables.repositories.task-list-markdown %}
 
-{% tip %}
-
-**Tip:** You cannot create task list items within closed issues or issues with linked pull requests.
-
-{% endtip %}
-
 ## Reordenar tarefas
 
 Você pode reordenar os itens de uma lista de tarefas clicando à esquerda da caixa de seleção de uma tarefa arrastando a tarefa para uma nova localidade e soltando a tarefa. Você pode reordenar tarefas em diferentes listas no mesmo comentário, mas você não pode reordenar tarefas em diferentes comentários.
@@ -76,5 +70,5 @@ Todos os problemas referenciados em uma lista de tarefas especificam que são ac
 
 ## Leia mais
 
-* "[Escrita básica e sintaxe de formatação](/articles/basic-writing-and-formatting-syntax)"{% ifversion fpt or ghes > 3.3 or ghae-issue-5036 %}
-* "[Rastreando alertas de {% data variables.product.prodname_code_scanning %} em problemas que usam listas de tarefas](/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/tracking-code-scanning-alerts-in-issues-using-task-lists)"{% endif %}
+* "[Basic writing and formatting syntax](/articles/basic-writing-and-formatting-syntax)"{% ifversion fpt or ghes > 3.3 or ghae-issue-5036 %}
+* "[Tracking {% data variables.product.prodname_code_scanning %} alerts in issues using task lists](/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/tracking-code-scanning-alerts-in-issues-using-task-lists)"{% endif %}

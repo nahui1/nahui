@@ -6,7 +6,7 @@ redirect_from:
   - /admin/github-actions/manually-syncing-actions-from-githubcom
 versions:
   ghes: '*'
-  ghae: '*'
+  ghae: next
 type: tutorial
 topics:
   - Actions
@@ -16,10 +16,11 @@ shortTitle: Sincronizar ações manualmente
 
 {% data reusables.actions.enterprise-beta %}
 {% data reusables.actions.enterprise-github-hosted-runners %}
+{% data reusables.actions.ae-beta %}
 
 {% data reusables.actions.enterprise-no-internet-actions %}
 
-{% ifversion ghes or ghae %}
+{% ifversion ghes or ghae-next %}
 
 A abordagem recomendada de habilitar o acesso a ações a partir de {% data variables.product.prodname_dotcom_the_website %} é permitir o acesso automático para todas as ações. Você pode fazer isso usando {% data variables.product.prodname_github_connect %} para integrar {% data variables.product.product_name %} com {% data variables.product.prodname_ghe_cloud %}. Para obter mais informações, consulte "[Habilitar o acesso automático às ações de {% data variables.product.prodname_dotcom_the_website %} usando o {% data variables.product.prodname_github_connect %}](/enterprise/admin/github-actions/enabling-automatic-access-to-githubcom-actions-using-github-connect)".
 

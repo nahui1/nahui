@@ -11,6 +11,7 @@ shortTitle: Manually run a workflow
 
 {% data reusables.actions.enterprise-beta %}
 {% data reusables.actions.enterprise-github-hosted-runners %}
+{% data reusables.actions.ae-beta %}
 
 ## Configuring a workflow to run manually
 
@@ -19,6 +20,8 @@ To run a workflow manually, the workflow must be configured to run on the `workf
 {% data reusables.repositories.permissions-statement-write %}
 
 ## Running a workflow
+
+{% include tool-switcher %}
 
 {% webui %}
 

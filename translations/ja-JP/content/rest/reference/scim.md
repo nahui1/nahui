@@ -29,7 +29,7 @@ SCIM API を使用するには、{% data variables.product.product_name %} Organ
 
 ### SAML および SCIM データのマッピング
 
-{% data reusables.scim.nameid-and-username-must-match %}
+SAML IdP および SCIM クライアントは、ユーザごとに一致する `NameID` と `userName` の値を使用する必要があります。 これにより、SAML を介して認証するユーザを、プロビジョニングされた SCIM ID にリンクできます。
 
 ### サポートされている SCIM ユーザ属性
 

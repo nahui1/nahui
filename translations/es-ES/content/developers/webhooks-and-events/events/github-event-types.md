@@ -1,6 +1,7 @@
 ---
 title: Tipos de evento de GitHub
 intro: 'Para la API de Eventos de {% data variables.product.prodname_dotcom %}, aprende acerca de cada tipo de evento, la acción que los desencadena en {% data variables.product.prodname_dotcom %}, y las propiedades exclusivas de cada evento.'
+product: '{% data reusables.gated-features.enterprise-accounts %}'
 redirect_from:
   - /v3/activity/event_types
   - /developers/webhooks-and-events/github-event-types
@@ -191,7 +192,7 @@ Este evento devuelve un objeto de `payload` vacío.
 
 ### Objeto de `payload` del evento
 
-| Clave                  | Tipo        | Descripción                                              |
+| Clave                  | Type        | Descripción                                              |
 | ---------------------- | ----------- | -------------------------------------------------------- |
 | `Acción`               | `secuencia` | La acción que se realizó. Puede ser `created`.           |
 | `solicitud_extracción` | `objeto`    | La solicitud de cambios a la cual pertenece la revisión. |
@@ -216,7 +217,7 @@ Este evento devuelve un objeto de `payload` vacío.
 
 ### Objeto de `payload` del evento
 
-| Clave                      | Tipo        | Descripción                                                                                                                                                                                                                                                                                                                                                                          |
+| Clave                      | Type        | Descripción                                                                                                                                                                                                                                                                                                                                                                          |
 | -------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `push_id`                  | `número`    | Identificador único para la carga.                                                                                                                                                                                                                                                                                                                                                   |
 | `tamaño`                   | `número`    | La cantidad de confirmaciones de la carga.                                                                                                                                                                                                                                                                                                                                           |

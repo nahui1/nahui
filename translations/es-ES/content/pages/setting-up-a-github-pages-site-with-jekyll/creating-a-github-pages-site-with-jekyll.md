@@ -68,9 +68,7 @@ Antes de que puedas usar Jekyll para crear un sitio de {% data variables.product
  Si decides publicar tu sitio desde la rama `gh-pages`, crea y controla la rama `gh-pages`.
  ```shell
  $ git checkout --orphan gh-pages
- # Creates a new branch, with no history or contents, called gh-pages, and switches to the gh-pages branch
- $ git rm -rf 
- # Removes the contents from your default branch from the working directory
+ # Creates a new branch, with no history or contents, called gh-pages and switches to the gh-pages branch
  ```
 1. Para crear un sitio nuevo de Jekyll, utiliza el comando `jekyll new`:
    ```shell
@@ -102,7 +100,7 @@ Antes de que puedas usar Jekyll para crear un sitio de {% data variables.product
 git add .
 git commit -m 'Initial GitHub pages site with Jekyll'
 ```
-1. Agrega tu repositorio en {% ifversion ghae %}{% data variables.product.product_name %}{% else %}{% data variables.product.product_location %}{% endif %} como remoto, reemplazando a {% ifversion ghes or ghae %}_HOSTNAME_ con el nombre de host de tu empresa,{% endif %}a _USER_ con la cuenta a la que pertenece el repositorio{% ifversion ghes or ghae %},{% endif %} y a _REPOSITORY_ con el nombre del repositorio.
+1. Add your repository on {% ifversion ghae %}{% data variables.product.product_name %}{% else %}{% data variables.product.product_location %}{% endif %} as a remote, replacing {% ifversion ghes or ghae %}_HOSTNAME_ with your enterprise's hostname,{% endif %} _USER_ with the account that owns the repository{% ifversion ghes or ghae %},{% endif %} and _REPOSITORY_ with the name of the repository.
 ```shell
 {% ifversion fpt or ghec %}
 $ git remote add origin https://github.com/<em>USER</em>/<em>REPOSITORY</em>.git
@@ -121,7 +119,6 @@ $ git remote add origin https://<em>HOSTNAME</em>/<em>USER</em>/<em>REPOSITORY</
 {% ifversion fpt or ghec %}
 {% data reusables.pages.choose-visibility %}{% endif %}
 {% data reusables.pages.visit-site %}
-{% data reusables.pages.check-workflow-run %}
 
 {% data reusables.pages.admin-must-push %}
 

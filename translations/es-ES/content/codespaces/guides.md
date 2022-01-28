@@ -4,7 +4,7 @@ shortTitle: Guías
 product: '{% data reusables.gated-features.codespaces %}'
 intro: Aprende cómo sacar el mayor provecho de GitHub
 allowTitleToDifferFromFilename: true
-layout: product-guides
+layout: product-sublanding
 versions:
   fpt: '*'
   ghec: '*'

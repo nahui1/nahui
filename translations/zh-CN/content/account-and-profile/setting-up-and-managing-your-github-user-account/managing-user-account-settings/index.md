@@ -1,9 +1,9 @@
 ---
-title: 管理用户帐户设置
-intro: 您可以更改个人帐户的多项设置，包括更改用户名和删除帐户。
+title: Managing user account settings
+intro: 'You can change several settings for your personal account, including changing your username and deleting your account.'
 redirect_from:
-  - /categories/29/articles
-  - /categories/user-accounts
+  - /categories/29/articles/
+  - /categories/user-accounts/
   - /articles/managing-user-account-settings
   - /github/setting-up-and-managing-your-github-user-account/managing-user-account-settings
 versions:
@@ -30,6 +30,6 @@ children:
   - /integrating-jira-with-your-personal-projects
   - /best-practices-for-leaving-your-company
   - /what-does-the-available-for-hire-checkbox-do
-shortTitle: 用户帐户设置
+shortTitle: User account settings
 ---
 

@@ -3,7 +3,7 @@ title: GitHub Sponsors 指南
 shortTitle: 指南
 intro: '学习如何充分利用 {% data variables.product.prodname_sponsors %}。'
 allowTitleToDifferFromFilename: true
-layout: product-guides
+layout: product-sublanding
 versions:
   fpt: '*'
   ghec: '*'

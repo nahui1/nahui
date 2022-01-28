@@ -19,19 +19,19 @@ Esta guía te demuestra cómo utilizar los proyectos (beta) para planear y rastr
 
 ## Prerrequisitos
 
-Puedes ya sea crear un proyecto de organización o de usuario. Para crear un proyecto de organización, necesitas una organización de {% data variables.product.prodname_dotcom %}. Para obtener más información sobre cómo crear una organización, consulta la sección "[Crear una organización nueva desde cero](/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch)".
+You can either create an organization project or a user project. To create an organization project, you need a {% data variables.product.prodname_dotcom %} organization. Para obtener más información sobre cómo crear una organización, consulta la sección "[Crear una organización nueva desde cero](/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch)".
 
-En esta guía agregarás propuestas existentes desde repositorios que le pertenecen a tu organización (para los proyectos organizacionales) o a ti mismo (para proyectos de usuario) a tu proyecto nuevo. Para obtener más información sobre cómo crear propuestas, consulta la sección "[Crear una propuesta](/issues/tracking-your-work-with-issues/creating-an-issue)".
+In this guide, you will add existing issues from repositories owned by your organization (for organization projects) or by you (for user projects) to your new project. Para obtener más información sobre cómo crear propuestas, consulta la sección "[Crear una propuesta](/issues/tracking-your-work-with-issues/creating-an-issue)".
 
 ## Crear un proyecto
 
-Primero, crea un proyecto organizacional o de usuario.
+First, create an organization project or a user project.
 
-### Crear un proyecto organizacional
+### Creating an organization project
 
 {% data reusables.projects.create-project %}
 
-### Crear un proyecto de usuario
+### Creating a user project
 
 {% data reusables.projects.create-user-project %}
 
@@ -48,14 +48,6 @@ Cuando inicializa tu proyecto nuevo, te pide agregar elementos al mismo. Si pier
 Repite los pasos anteriores algunas veces para agregar propuestas múltiples a tu proyecto.
 
 Para obtener más información sobre otras formas de agregar usuarios a tu proyecto o acerca de otros elementos que puedes agregar a tu proyecto, consulta la sección "[Crear un proyecto](/issues/trying-out-the-new-projects-experience/creating-a-project#adding-items-to-your-project)".
-
-## Agregar borradores de propuesta a tu proyecto
-
-Posteriormente, agrega un borrador de propuesta a tu proyecto.
-
-1. Coloca tu cursor en la fila inferior del proyecto, junto al {% octicon "plus" aria-label="plus icon" %}.
-1. Teclea tu ida y luego presiona **Enter**.
-1. Haz clic en el título del borrador de propuesta. En la caja de entrad de lenguaje de marcado que se muestra, ingresa más información sobre tu idea y luego haz clic en **Guardar**.
 
 ## Crear un campo para rastrear la prioridad
 
@@ -104,11 +96,11 @@ Pudes compartir la URL con tu equipo para mantener a todos alineados con las pri
 
 Cuando guardas una vista, cualquiera que abra el proyecto verá la vista guardada. Aquí, agrupaste por prioridad, pero también puedes agregar otros modificadores, tales como clasificar, filtrar o diseño. Luego, crearás una vista nueva con el diseño modificado.
 
-## Agregar un diseño de tablero
+## Adding a board layout
 
 Para ver el progreso de las propuestas de tu proyecto, puedes cambiar al diseño de tablero.
 
-El diseño de tablero se basa en el campo de estado, así que especifica un estado para cada propuesta en tu proyecto.
+The board layout is based on the status field, so specify a status for each issue in your project.
 
 ![Estado de ejemplo](/assets/images/help/projects/status_example.png)
 
@@ -134,15 +126,15 @@ Para indicar la propuesta de la vista, dale un nombre descriptivo.
 
 ![Prioridades de ejemplo](/assets/images/help/projects/project-view-switch.gif)
 
-## Configurar la automatización integrada
+## Configure built-in automation
 
-Finalmente, agrega un flujo de trabajo integrado para configurar el estado en **Por hacer** cuando se agrega un elemento a tu proyecto.
+Finally, add a built in workflow to set the status to **Todo** when an item is added to your project.
 
 1. In your project, click {% octicon "workflow" aria-label="the workflow icon" %}.
-2. Debajo de **Flujos de trabajo predeterminados**, haz clic en **Elemento agregado al proyecto**.
-3. Junto a **Cuándo**, asegúrate de que tanto `issues` como `pull requests` estén seleccionados.
-4. Junto a **Configurar**, selecciona **Estado: Por hacer**.
-5. Haz clic en el alternador de **Inhabilitado** para habilitar el flujo de trabajo.
+2. Under **Default workflows**, click **Item added to project**.
+3. Next to **When**, ensure that both `issues` and `pull requests` are selected.
+4. Next to **Set**, select **Status:Todo**.
+5. Click the **Disabled** toggle to enable the workflow.
 
 ## Pasos siguientes
 

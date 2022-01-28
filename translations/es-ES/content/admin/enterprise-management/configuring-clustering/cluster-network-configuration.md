@@ -100,8 +100,6 @@ Dado que las conexiones de clientes con el agrupamiento provienen del balanceado
 
 Recomendamos firmemente habilitar el soporte PROXY para tu instancia y el balanceador de carga.
 
-{% data reusables.enterprise_installation.proxy-incompatible-with-aws-nlbs %}
-
  - Para tu instancia, usa este comando:
   ```shell
   $ ghe-config 'loadbalancer.proxy-protocol' 'true' && ghe-cluster-config-apply

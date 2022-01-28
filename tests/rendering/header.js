@@ -151,12 +151,15 @@ describe('header', () => {
       expect(ghec.text().trim()).toBe('Enterprise administrators')
     })
 
-    test("point to homepages in the current page's language", async () => {
-      const $ = await getDOM('/ja/github/site-policy/github-terms-of-service')
-      const $breadcrumbRefs = $('[data-testid=breadcrumbs] a')
-      expect($breadcrumbRefs[0].attribs.href.startsWith('/ja')).toBe(true)
-      const $sidebarRefs = $('[data-testid=sidebar] a')
-      expect($sidebarRefs[0].attribs.href.startsWith('/ja')).toBe(true)
+    // Skipped. Docs Engineering issue: 923
+    test.skip("point to homepages in the current page's language", async () => {
+      const $ = await getDOM(
+        '/ja/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests'
+      )
+      expect(
+        $('[data-testid=product-picker][data-current-product-path="/repositories"]').length
+      ).toBe(1)
+      expect($(`[data-testid=product-picker] a[href="/ja/enterprise-cloud/admin"]`).length).toBe(1)
     })
 
     test('emphasizes the product that corresponds to the current page', async () => {

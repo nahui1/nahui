@@ -47,6 +47,8 @@ If you want to create a new branch for your pull request and do not have write p
 
 ## 创建拉取请求
 
+{% include tool-switcher %}
+
 {% webui %}
 
 {% data reusables.repositories.navigate-to-repo %}
