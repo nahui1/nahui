@@ -17,6 +17,7 @@ type: reference
 
 {% data reusables.actions.enterprise-beta %}
 {% data reusables.actions.enterprise-github-hosted-runners %}
+{% data reusables.actions.ae-beta %}
 
 ## Acerca de la nueva sintaxis YAML para {% data variables.product.prodname_actions %}
 
@@ -132,42 +133,35 @@ runs:
 
 Para obtener más información sobre cómo utilizar la sintaxis de contexto, consulta la sección de "[Contextos](/actions/learn-github-actions/contexts)"
 
-## `runs`
-
-**Requerido** Especifica si esta es una acción de JavaScript, una acción compuesta o una acción de Docker y cómo se ejecuta dicha acción.
-
 ## `runs` para acciones de JavaScript
 
-**Requerido** Configura la ruta al código de la acción y el tiempo de ejecución que se utiliza para ejecutarlo.
+**Requerido** Configura la ruta al código de la acción y a la aplicación que se utiliza para ejecutar dicho código.
 
-### Ejemplo de uso con Node.js {% ifversion fpt or ghes > 3.3 or ghae-issue-5504 or ghec %}v16{% else %}v12{% endif %}
+### Ejemplo usando Node.js
 
 ```yaml
 runs:
-  using: {% ifversion fpt or ghes > 3.3 or ghae-issue-5504 or ghec %}'node16'{% else %}'node12'{% endif %}
+  using: 'node12'
   main: 'main.js'
 ```
 
 ### `runs.using`
 
-**Requerido** El tiempo de ejecución para ejecutar el código especificado en [`main`](#runsmain).
-
-- Utiliza `node12` para Node.js v12.{% ifversion fpt or ghes > 3.3 or ghae-issue-5504 or ghec %}
-- Utiliza `node16` para Node.js v16.{% endif %}
+**Requerido** La aplicación utilizada para el código especificado en [`main`](#runsmain).
 
 ### `runs.main`
 
-**Requerido** El archivo que contiene tu código de acción. El tiempo de ejecución que se especifica en [`using`](#runsusing) ejecuta este archivo.
+**Requerido** El archivo que contiene tu código de acción. La aplicación especificada en [`using`](#runsusing) ejecuta este archivo.
 
 ### `pre`
 
-**Opcional** Te permite ejecutar un script al inicio de un job, antes de que la acción `main:` comience. Por ejemplo, puedes utilizar `pre:` para ejecutar un script de configuración de pre-requisitos. El tiempo de ejecución que ese especifica con la sintaxis de [`using`](#runsusing) ejecutará este archivo. La acción `pre:` siempre se ejecuta predeterminadamente pero puedes invalidarla utilizando [`pre-if`](#pre-if).
+**Opcional** Te permite ejecutar un script al inicio de un job, antes de que la acción `main:` comience. Por ejemplo, puedes utilizar `pre:` para ejecutar un script de configuración de pre-requisitos. La aplicación que se especifica con la sintaxis [`using`](#runsusing) ejecutará este archivo. La acción `pre:` siempre se ejecuta predeterminadamente pero puedes invalidarla utilizando [`pre-if`](#pre-if).
 
 En este ejemplo, la acción `pre:` ejecuta un script llamado `setup.js`:
 
 ```yaml
 runs:
-  using: {% ifversion fpt or ghes > 3.3 or ghae-issue-5504 or ghec %}'node16'{% else %}'node12'{% endif %}
+  using: 'node12'
   pre: 'setup.js'
   main: 'index.js'
   post: 'cleanup.js'
@@ -175,9 +169,7 @@ runs:
 
 ### `pre-if`
 
-**Opcional** Te permite definir las condiciones para la ejecución de la acción `pre:`. La acción `pre:` únicamente se ejecutará si se cumplen las condiciones en `pre-if`. Si no se configura, `pre-if` se configurará predefinidamente como `always()`. En `pre-if`, las funciones de verificación de estado evalúan contra el estado del job y no contra el estado de la propia acción.
-
-Nota que el contexto `step` no está disponible, ya que no se ha ejecutado ningún paso todavía.
+**Opcional** Te permite definir las condiciones para la ejecución de la acción `pre:`. La acción `pre:` únicamente se ejecutará si se cumplen las condiciones en `pre-if`. Si no se configura, `pre-if` se configurará predefinidamente como `always()`. Nota que el contexto `step` no está disponible, ya que no se ha ejecutado ningún paso todavía.
 
 En este ejemplo, `cleanup.js` se ejecuta únicamente en los ejecutores basados en linux:
 
@@ -188,13 +180,13 @@ En este ejemplo, `cleanup.js` se ejecuta únicamente en los ejecutores basados e
 
 ### `publicación`
 
-**Opcional** Te permite ejecutar un script al final de un job, una vez que se haya completado la acción `main:`. Por ejemplo, puedes utilizar `post:` para finalizar algunos procesos o eliminar los archivos innecesarios. El tiempo de ejecución que ese especifica con la sintaxis de [`using`](#runsusing) ejecutará este archivo.
+**Opcional** Te permite ejecutar un script al final de un job, una vez que se haya completado la acción `main:`. Por ejemplo, puedes utilizar `post:` para finalizar algunos procesos o eliminar los archivos innecesarios. La aplicación que se especifica con la sintaxis [`using`](#runsusing) ejecutará este archivo.
 
 En este ejemplo, la acción `post:` ejecuta un script llamado `cleanup.js`:
 
 ```yaml
 runs:
-  using: {% ifversion fpt or ghes > 3.3 or ghae-issue-5504 or ghec %}'node16'{% else %}'node12'{% endif %}
+  using: 'node12'
   main: 'index.js'
   post: 'cleanup.js'
 ```
@@ -203,7 +195,7 @@ La acción `post:` siempre se ejecuta predeterminadamente, pero la puedes invali
 
 ### `post-if`
 
-**Opcional** Te permite definir condiciones para la ejecución de la acción `post:`. La acción `post` únicamente se ejecutará si se cumplen las condiciones en `post-if`. Si no se configura, `pre-if` se configurará predeterminadamente como `always()`. En `post-if`, las funciones de verificación de estado evalúan contra el estado del job y no contra el estado de la propia acción.
+**Opcional** Te permite definir condiciones para la ejecución de la acción `post:`. La acción `post` únicamente se ejecutará si se cumplen las condiciones en `post-if`. Si no se configura, `pre-if` se configurará predeterminadamente como `always()`.
 
 Por ejemplo, este `cleanup.js` únicamente se ejecutará en ejecutores basados en Linux:
 
@@ -214,11 +206,11 @@ Por ejemplo, este `cleanup.js` únicamente se ejecutará en ejecutores basados e
 
 ## `runs` para las acciones compuestas
 
-**Requerido** Configura la ruta a la acción compuesta.
+**Requerido** Configura la ruta a la acción compuesta, y la aplicación que se utiliza para ejecutar el código.
 
 ### `runs.using`
 
-**Requerido** Debes configurar este valor en `'composite'`.
+**Requerido** Para utilizar una acción compuesta, configúralo como `"composite"`.
 
 ### `runs.steps`
 
@@ -261,39 +253,10 @@ Para obtener más información, consulta la sección "[``](/actions/reference/co
 #### `runs.steps[*].shell`
 
 {% ifversion fpt or ghes > 3.2 or ghae-issue-4853 or ghec %}
-**Opcional** El shell en donde quieres ejecutar el comando. Puedes utilizar cualquiera de los shells listados [aquí](/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepsshell). Requerido si se configuró `run`.
+**Opcional** El shell en donde quieres ejecutar el comando. Puedes utilizar cualquiera de los shells listados [aquí](/actions/reference/workflow-syntax-for-github-actions#using-a-specific-shell). Requerido si se configuró `run`.
 {% else %}
-**Requerido** El shell en donde quieres ejecutar el comando. Puedes utilizar cualquiera de los shells listados [aquí](/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepsshell). Requerido si se configuró `run`.
+**Requerido** El shell en donde quieres ejecutar el comando. Puedes utilizar cualquiera de los shells listados [aquí](/actions/reference/workflow-syntax-for-github-actions#using-a-specific-shell). Requerido si se configuró `run`.
 {% endif %}
-
-#### `runs.steps[*].if`
-
-**Opcional** Puedes utilizar el condicional `if` para prevenir que un paso se ejecute a menos de que se cumpla con una condición. Puedes usar cualquier contexto y expresión admitidos para crear un condicional.
-
-{% data reusables.github-actions.expression-syntax-if %} Para obtener más información, consulta la sección "[Expresiones](/actions/learn-github-actions/expressions)".
-
-**Ejemplo: Utilizando contextos**
-
- Este paso solo se ejecuta cuando el tipo de evento es una `pull_request` y la acción del evento está `unassigned` (sin asignar).
-
- ```yaml
-steps:
-  - run: echo This event is a pull request that had an assignee removed.
-    if: {% raw %}${{ github.event_name == 'pull_request' && github.event.action == 'unassigned' }}{% endraw %}
-```
-
-**Ejemplo: Utilizando funciones de verificación de estado**
-
-`my backup step` solo se ejecutará cuando falle el paso previo de una acción compuesta. Para obtener más información, consulta la sección "[Expresiones](/actions/learn-github-actions/expressions#job-status-check-functions)".
-
-```yaml
-steps:
-  - name: My first step
-    uses: octo-org/action-name@main
-  - name: My backup step
-    if: {% raw %}${{ failure() }}{% endraw %}
-    uses: actions/heroku@1.0.0
-```
 
 #### `runs.steps[*].name`
 
@@ -305,7 +268,7 @@ steps:
 
 #### `runs.steps[*].env`
 
-**Opcional**  Configura un `map` de variables de ambiente únicamente para este paso. Si quieres modificar la variable de ambiente almacenada en el flujo de trabajo, utiliza `echo "{name}={value}" >> $GITHUB_ENV` en un paso compuesto.
+**Opcional**  Configura un `map` de variables de ambiente únicamente para este paso. If you want to modify the environment variable stored in the workflow, use `echo "{name}={value}" >> $GITHUB_ENV` in a composite step.
 
 #### `runs.steps[*].working-directory`
 
@@ -390,7 +353,7 @@ runs:
 
 **Opcional** Te permite ejecutar un script antes de que comience la acción `entrypoint`. Por ejemplo, puedes utilizar `pre-entrypoint` para ejecutar un script de configuración de pre-requisitos. {% data variables.product.prodname_actions %} utiliza `docker run` para lanzar esta acción, y ejecuta el script dentro de un contenedor nuevo que utiliza la misma imagen base. Esto significa que el estado del tiempo de ejecución difiere de el contenedor principal `entrypoint`, y se deberá acceder a cualquier estado que requieras ya sea en el espacio de trabajo, `HOME`, o como una variable `STATE_`. La acción `pre-entrypoint:` siempre se ejecuta predeterminadamente pero la puedes invalidar utilizando [`pre-if`](#pre-if).
 
-El tiempo de ejecución que ese especifica con la sintaxis de [`using`](#runsusing) ejecutará este archivo.
+La aplicación que se especifica con la sintaxis [`using`](#runsusing) ejecutará este archivo.
 
 En este ejemplo, la acción `pre.entrypoint:` ejecuta un script llamado `setup.sh`:
 
@@ -458,7 +421,7 @@ runs:
 ```
 {% endraw %}
 
-## `branding`
+## `branding (marca)`
 
 Puedes usar un color y un icono de [Pluma](https://feathericons.com/) para crear una insignia que personalice y diferencie tu acción. Los distintivos se muestran junto al nombre de tu acción en [{% data variables.product.prodname_marketplace %}](https://github.com/marketplace?type=actions).
 

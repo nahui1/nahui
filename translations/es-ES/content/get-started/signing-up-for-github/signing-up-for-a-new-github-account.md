@@ -13,13 +13,7 @@ topics:
   - Accounts
 ---
 
-## Acerca de las cuentas nuevas de {% data variables.product.prodname_dotcom_the_website %}
-
-Puedes crear una cuenta personal, lo cual funciona como tu identidad en {% data variables.product.prodname_dotcom_the_website %} o una organización, la cual permite cuentas personales múltiples para colaborar en varios proyectos. Para obtener más información sobre los tipos de cuenta, consulta la sección "[Tipos de cuentas de {% data variables.product.prodname_dotcom %}](/get-started/learning-about-github/types-of-github-accounts)".
-
-Cuando creas una cuenta personal o de organización, debes seleccionar un plan de facturación para ella. Para obtener más información, consulta "Productos de [{% data variables.product.company_short %}](/get-started/learning-about-github/githubs-products)".
-
-## Registrarse para una cuenta nueva
+Para obtener más información sobre tipos de cuentas y productos, consulta "[Tipos de cuentas {% data variables.product.prodname_dotcom %}](/articles/types-of-github-accounts)" y productos de "[{% data variables.product.company_short %}](/articles/github-s-products)."
 
 {% data reusables.accounts.create-account %}
 1. Sigue las indicaciones para crear tu cuenta personal o de organización.
@@ -27,5 +21,7 @@ Cuando creas una cuenta personal o de organización, debes seleccionar un plan d
 ## Pasos siguientes
 
 - [Verifica tus dirección de correo electrónico](/articles/verifying-your-email-address)"
-- "[Crear una cuenta empresarial](/enterprise-cloud@latest/admin/overview/creating-an-enterprise-account)"{% ifversion fpt %} en la documentación de {% data variables.product.prodname_ghe_cloud %}{% endif %}
+- [Configura autenticación de dos factores](/articles/configuring-two-factor-authentication)"
+- [Agrega una biografía a tu perfil](/articles/adding-a-bio-to-your-profile)"
+- "[Crea una organización](/articles/creating-a-new-organization-from-scratch)"
 - [ {% data variables.product.prodname_roadmap %} ]({% data variables.product.prodname_roadmap_link %}) en el repositorio `github/roadmap`

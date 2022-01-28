@@ -16,9 +16,7 @@ shortTitle: Mude a visibilidade da ideia
 
 Os proprietários da organização podem definir limitações para exibir informações de dependência da organização. Todos os integrantes de uma organização podem exibir informações de dependência da organização por padrão.
 
-{% ifversion ghec %}
-Os proprietários corporativos podem definir limitações para exibir informações de dependência da organização em todas as organizações da sua conta corporativa. Para obter mais informações, consulte[Políticas de Insights de dependência na sua empresa](/admin/policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-dependency-insights-in-your-enterprise)".
-{% endif %}
+Os proprietários corporativos podem definir limitações para exibir informações de dependência da organização em todas as organizações da sua conta corporativa. For more information, see "[Enforcing policies for dependency insights in your enterprise](/enterprise-cloud@latest/admin/policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-dependency-insights-in-your-enterprise)."
 
 {% data reusables.profile.access_org %}
 {% data reusables.profile.org_settings %}

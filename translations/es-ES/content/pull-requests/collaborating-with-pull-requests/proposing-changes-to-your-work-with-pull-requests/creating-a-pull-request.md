@@ -47,6 +47,8 @@ When you change any of the information in the branch range, the Commit and Files
 
 ## Creating the pull request
 
+{% include tool-switcher %}
+
 {% webui %}
 
 {% data reusables.repositories.navigate-to-repo %}
@@ -157,7 +159,7 @@ gh pr create --web
 {% codespaces %}
 
 1. Once you've committed changes to your local copy of the repository, click the **Create Pull Request** icon.
-![Source control side bar with staging button highlighted](/assets/images/help/codespaces/codespaces-commit-pr-button.png)
+![Source control side bar with staging button highlighted](/assets/images/help/codespaces/codespaces-commit-pr-button.png)  
 1. Check that the local branch and repository you're merging from, and the remote branch and repository you're merging into, are correct. Then give the pull request a title and a description.
 ![GitHub pull request side bar](/assets/images/help/codespaces/codespaces-commit-pr.png)
 1. Click **Create**.

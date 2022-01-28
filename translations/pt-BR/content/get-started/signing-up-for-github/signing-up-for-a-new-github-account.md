@@ -13,13 +13,7 @@ topics:
   - Accounts
 ---
 
-## Sobre as novas contas em {% data variables.product.prodname_dotcom_the_website %}
-
-É possível criar uma conta pessoal, que serve como sua identidade em {% data variables.product.prodname_dotcom_the_website %}, ou em uma organização, o que permite que várias contas pessoais colaborem em múltiplos projetos. Para obter mais informações sobre os tipos de conta, consulte "[Tipos de contas de {% data variables.product.prodname_dotcom %}](/get-started/learning-about-github/types-of-github-accounts)".
-
-Ao criar uma conta pessoal ou organização, você deve selecionar um plano de cobrança para a conta. Para obter mais informações, consulte os "[Produtos da {% data variables.product.company_short %}](/get-started/learning-about-github/githubs-products)".
-
-## Inscrevendo-se em uma nova conta
+Para obter mais informações sobre tipos de contas e produtos, consulte "[Tipos de contas do {% data variables.product.prodname_dotcom %}](/articles/types-of-github-accounts)" e "[Produtos do {% data variables.product.company_short %}](/articles/github-s-products)".
 
 {% data reusables.accounts.create-account %}
 1. Siga as instruções para criar a conta pessoa ou organização.
@@ -27,5 +21,7 @@ Ao criar uma conta pessoal ou organização, você deve selecionar um plano de c
 ## Próximas etapas
 
 - "[Verificar endereço de e-mail](/articles/verifying-your-email-address)"
-- "[Criando uma conta corporativa](/enterprise-cloud@latest/admin/overview/creating-an-enterprise-account)"{% ifversion fpt %} na documentação de {% data variables.product.prodname_ghe_cloud %}{% endif %}
+- "[Configurar a autenticação de dois fatores](/articles/configuring-two-factor-authentication)"
+- "[Adicionar uma bio ao perfil](/articles/adding-a-bio-to-your-profile)"
+- "[Criar uma organização](/articles/creating-a-new-organization-from-scratch)"
 - [ {% data variables.product.prodname_roadmap %} ]({% data variables.product.prodname_roadmap_link %}) no repositório  `github/roadmap`

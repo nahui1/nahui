@@ -17,6 +17,7 @@ shortTitle: 构建和测试Ruby
 
 {% data reusables.actions.enterprise-beta %}
 {% data reusables.actions.enterprise-github-hosted-runners %}
+{% data reusables.actions.ae-beta %}
 
 ## 简介
 
@@ -29,11 +30,11 @@ shortTitle: 构建和测试Ruby
 - [了解 {% data variables.product.prodname_actions %}](/actions/learn-github-actions)
 - [Ruby 20 分钟](https://www.ruby-lang.org/en/documentation/quickstart/)
 
-## Using the Ruby starter workflow
+## 从 Ruby 工作流程模板开始
 
-{% data variables.product.prodname_dotcom %} provides a Ruby starter workflow that will work for most Ruby projects. For more information, see the [Ruby starter workflow](https://github.com/actions/starter-workflows/blob/master/ci/ruby.yml).
+{% data variables.product.prodname_dotcom %} 提供 Ruby 适用于大多数 Ruby 项目的工作流程模板。 更多信息请参阅 [Ruby 工作流程模板](https://github.com/actions/starter-workflows/blob/master/ci/ruby.yml)。
 
-To get started quickly, add the starter workflow to the `.github/workflows` directory of your repository. 下面显示的工作流假定仓库的默认分支是 `main`。
+要快速开始，请将模板添加到仓库的 `.github/workflows` 目录中。 下面显示的工作流假定仓库的默认分支是 `main`。
 
 ```yaml
 {% data reusables.actions.actions-not-certified-by-github-comment %}
@@ -283,7 +284,7 @@ on:
 jobs:
   build:
     name: Build + Publish
-    runs-on: ubuntu-latest{% ifversion fpt or ghes > 3.1 or ghae or ghec %}
+    runs-on: ubuntu-latest{% ifversion fpt or ghes > 3.1 or ghae-next or ghec %}
     permissions:
       packages: write
       contents: read{% endif %}

@@ -23,10 +23,10 @@ A Paleta de Comando é uma das funcionalidades principais de {% data variables.p
 
 Você pode acessar o {% data variables.product.prodname_vscode_command_palette %} de várias maneiras.
 
-- <kbd>Shift</kbd>+<kbd>Command</kbd>+<kbd>P</kbd> (Mac) / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> (Windows/Linux).
+- `Shift + Command + P` (Mac) / `Ctrl + Shift + P` (Windows).
 
   Observe que este comando é um atalho de teclado reservado no Firefox.
-- <kbd>F1</kbd>
+- `F1`
 - No Menu de Aplicativos, clique em **Ver > Paleta de Comando…**.
 
   ![Menu do aplicativo](/assets/images/help/codespaces/codespaces-view-menu.png)

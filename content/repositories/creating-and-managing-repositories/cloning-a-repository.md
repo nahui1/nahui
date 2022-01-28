@@ -24,6 +24,8 @@ You can clone your existing repository or clone another person's existing reposi
 
 ## Cloning a repository
 
+{% include tool-switcher %}
+
 {% webui %}
 
 {% data reusables.repositories.navigate-to-repo %}

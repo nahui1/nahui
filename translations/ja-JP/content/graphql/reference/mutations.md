@@ -18,5 +18,6 @@ topics:
 
 詳しい情報については「[ミューテーションについて](/graphql/guides/forming-calls-with-graphql#about-mutations)」を参照してください。
 
-<!-- this page is pre-rendered by scripts because it's too big to load dynamically -->
-<!-- see lib/graphql/static/prerendered-mutations.json -->
+{% for item in graphql.schemaForCurrentVersion.mutations %}
+  {% include graphql-mutation %}
+{% endfor %}

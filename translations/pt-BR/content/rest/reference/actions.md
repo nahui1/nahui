@@ -1,6 +1,6 @@
 ---
 title: Ações
-intro: 'Com a API de ações, você pode gerenciar e controlar {% data variables.product.prodname_actions %} para uma organização ou repositório.'
+intro: 'With the Actions API, you can manage and control {% data variables.product.prodname_actions %} for an organization or repository.'
 redirect_from:
   - /v3/actions
 versions:
@@ -13,6 +13,7 @@ topics:
 miniTocMaxHeadingLevel: 3
 ---
 
+{% data reusables.actions.ae-beta %}
 
 A API de {% data variables.product.prodname_actions %} permite que você gerencie {% data variables.product.prodname_actions %} usando a API REST. {% data reusables.actions.actions-authentication %} {% data variables.product.prodname_github_apps %} exige permissões mencionadas em cada ponto de extremidade. Para obter mais informações, consulte "[Documentação do {% data variables.product.prodname_actions %}](/actions)".
 
@@ -33,7 +34,7 @@ A API de Artefatos permite que você faça o download, exclua e recupere informa
 {% ifversion fpt or ghes > 2.22 or ghae or ghec %}
 ## Permissões
 
-A API de Permissões permite que você defina permissões para quais organizações e repositórios podem executar {% data variables.product.prodname_actions %}, e quais ações podem ser executadas.{% ifversion fpt or ghec or ghes %} Para obter mais informações, consulte "[Limites de uso, cobrança e administração](/actions/reference/usage-limits-billing-and-administration#disabling-or-limiting-github-actions-for-your-repository-or-organization)".{% endif %}
+A API de Permissões permite que você defina permissões para quais organizações e repositórios têm permissão para executar {% data variables.product.prodname_actions %}, e quais ações podem ser executadas. Para obter mais informações, consulte "[Limites de uso, cobrança e administração](/actions/reference/usage-limits-billing-and-administration#disabling-or-limiting-github-actions-for-your-repository-or-organization)".
 
 Você também pode definir permissões para uma empresa. Para obter mais informações, consulte a "[{% data variables.product.prodname_dotcom %} administração do Enterprise](/rest/reference/enterprise-admin#github-actions)" API REST.
 

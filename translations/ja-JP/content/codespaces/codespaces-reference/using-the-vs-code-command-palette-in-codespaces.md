@@ -23,10 +23,10 @@ redirect_from:
 
 You can access the {% data variables.product.prodname_vscode_command_palette %} in a number of ways.
 
-- <kbd>Shift</kbd>+<kbd>Command</kbd>+<kbd>P</kbd> (Mac) / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> (Windows/Linux).
+- `Shift + Command + P` (Mac) / `Ctrl + Shift + P` (Windows)
 
   このコマンドは Firefox で指定されているキーボードショートカットになりますので、ご注意ください。
-- <kbd>F1</kbd>
+- `F1`
 - アプリケーションメニューから、**[View] > [Command Palette…]** をクリックします。
 
   ![アプリケーションメニュー](/assets/images/help/codespaces/codespaces-view-menu.png)

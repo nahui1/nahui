@@ -17,6 +17,7 @@ shortTitle: Elimina la etiqueta al agregar la tarjeta
 
 {% data reusables.actions.enterprise-beta %}
 {% data reusables.actions.enterprise-github-hosted-runners %}
+{% data reusables.actions.ae-beta %}
 
 ## Introducción
 
@@ -42,7 +43,7 @@ En el tutorial, primero harás un archivo de flujo de trabajo que utilice la [ac
     jobs:
       remove_labels:
         if: github.event.project_card.column_id == '12345678'
-        runs-on: ubuntu-latest{% ifversion fpt or ghes > 3.1 or ghae or ghec %}
+        runs-on: ubuntu-latest{% ifversion fpt or ghes > 3.1 or ghae-next or ghec %}
         permissions:
           issues: write
           pull-requests: write{% endif %}

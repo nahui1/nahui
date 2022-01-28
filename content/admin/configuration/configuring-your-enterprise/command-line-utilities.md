@@ -2,8 +2,8 @@
 title: Command-line utilities
 intro: '{% data variables.product.prodname_ghe_server %} includes a variety of utilities to help resolve particular problems or perform specific tasks.'
 redirect_from:
-  - /enterprise/admin/articles/viewing-all-services
-  - /enterprise/admin/articles/command-line-utilities
+  - /enterprise/admin/articles/viewing-all-services/
+  - /enterprise/admin/articles/command-line-utilities/
   - /enterprise/admin/installation/command-line-utilities
   - /enterprise/admin/configuration/command-line-utilities
   - /admin/configuration/command-line-utilities
@@ -836,7 +836,7 @@ This utility will enforce the default organization membership visibility setting
 ghe-org-membership-update --visibility=<em>SETTING</em>
 ```
 
-### `ghe-user-csv`
+### ghe-user-csv
 
 This utility exports a list of all the users in the installation into CSV format. The CSV file includes the email address, which type of user they are (e.g., admin, user), how many repositories they have, how many SSH keys, how many organization memberships, last logged IP address, etc. Use the `-h` flag for more options.
 

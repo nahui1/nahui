@@ -13,7 +13,7 @@ versions:
   ghec: '*'
 topics:
   - Pull requests
-shortTitle: プロジェクトボードの無効化
+shortTitle: Disable project boards
 ---
 
 プロジェクトボードを無効化すると、タイムラインや[監査ログ](/articles/reviewing-your-security-log/)でプロジェクトボード情報を見ることができなくなります。

@@ -33,15 +33,13 @@ program
   )
   .option('-d --include-deprecated', 'Includes schemas that are marked as `deprecated: true`')
   .option('-u --include-unpublished', 'Includes schemas that are marked as `published: false`')
-  .option('--redirects-only', 'Only generate the redirects file')
   .parse(process.argv)
 
-const { decorateOnly, versions, includeUnpublished, includeDeprecated, redirectsOnly } =
-  program.opts()
+const { decorateOnly, versions, includeUnpublished, includeDeprecated } = program.opts()
 
 // Check that the github/github repo exists. If the files are only being
 // decorated, the github/github repo isn't needed.
-if (!decorateOnly && !redirectsOnly) {
+if (!decorateOnly) {
   try {
     await stat(githubRepoDir)
   } catch (error) {
@@ -70,15 +68,11 @@ main()
 
 async function main() {
   // Generate the dereferenced OpenAPI schema files
-  if (!decorateOnly && !redirectsOnly) {
+  if (!decorateOnly) {
     await getDereferencedFiles()
   }
   // Decorate the dereferenced files in a format ingestible by docs.github.com
-  if (!redirectsOnly) {
-    await decorate()
-  }
-
-  await updateRedirectOverrides()
+  await decorate()
 
   console.log(
     '\n🏁 The static REST API files are now up-to-date with your local `github/github` checkout. To revert uncommitted changes, run `git checkout lib/rest/static/*.\n\n'
@@ -132,23 +126,6 @@ async function getDereferencedFiles() {
     schema.info.version = `${githubBranch} !!DEVELOPMENT MODE - DO NOT MERGE!!`
     await writeFile(path.join(dereferencedPath, filename), JSON.stringify(schema, null, 2))
   }
-}
-
-async function updateRedirectOverrides() {
-  const overrides = JSON.parse(await readFile('script/rest/utils/rest-api-overrides.json', 'utf8'))
-
-  const redirects = {}
-  console.log('\n➡️  Updating REST API redirect exception list.\n')
-  for (const value of Object.values(overrides)) {
-    const oldUrl = value.originalUrl
-    const anchor = oldUrl.replace('/rest/reference', '').split('#')[1]
-    redirects[oldUrl] = `/rest/reference/${value.category}#${anchor}`
-  }
-  await writeFile(
-    'lib/redirects/static/rest-api-redirect-exceptions.json',
-    JSON.stringify(redirects, null, 2),
-    'utf8'
-  )
 }
 
 async function decorate() {

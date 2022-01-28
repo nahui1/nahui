@@ -1,5 +1,5 @@
 ---
-title: Criar um pull request
+title: Criar uma pull request
 intro: 'Crie um pull request para fazer sugestões e colaborar nas alterações de um repositório. Essas alterações são propostas em um *branch*, que garante que o branch-padrão só contém trabalho concluído e aprovado.'
 permissions: 'Anyone with read access to a repository can create a pull request. {% data reusables.enterprise-accounts.emu-permission-propose %}'
 redirect_from:
@@ -46,6 +46,8 @@ Quando você muda qualquer uma das informações no intervalo de branches, as á
 {% endtip %}
 
 ## Criar a pull request
+
+{% include tool-switcher %}
 
 {% webui %}
 

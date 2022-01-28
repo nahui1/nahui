@@ -34,8 +34,6 @@ shortTitle: アカウントからのブロック
 - リポジトリのコラボレータとして削除されます
 - そのユーザの、あなたへのスポンサーシップはキャンセルされます
 - ブロックされたユーザへの、またはブロックされたユーザからの保留中のリポジトリまたはアカウント継承者の招待がキャンセルされます
-- The user is removed as a collaborator from all the Project Boards & Projects (beta) owned by you
-- You are removed as a collaborator from all the Project Boards & Projects (beta) owned by the user
 
 ユーザをブロックすると、ユーザは以下のことができなくなります:
 - あなたのユーザ名の [@メンション](/articles/basic-writing-and-formatting-syntax/#mentioning-people-and-teams)を含む、あなたへの通知の送信
@@ -48,8 +46,6 @@ shortTitle: アカウントからのブロック
 - あなたのリポジトリをコメント中でクロス参照すること
 - リポジトリのフォーク、Watch、ピン留め、Star 付け
 - あなたをスポンサーすること
-- Add you as a collaborator on their Project Boards & Projects (beta)
-- Make changes to your public Project Boards & Projects (beta)
 
 あなたが所有するリポジトリでは、ブロックされたユーザは以下のこともできなくなります:
 - Issue のオープン

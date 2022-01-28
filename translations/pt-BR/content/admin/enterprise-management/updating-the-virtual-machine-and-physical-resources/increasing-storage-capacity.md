@@ -65,29 +65,21 @@ shortTitle: Aumentar capacidade de armazenamento
 {% endwarning %}
 
 1. Vincule o novo disco ao appliance do {% data variables.product.prodname_ghe_server %}.
-1. Execute o comando `parted` para formatar o disco:
+2. Execute o comando `parted` para formatar o disco:
   ```shell
   $ sudo parted /dev/xvdg mklabel msdos
   $ sudo parted /dev/xvdg mkpart primary ext4 0% 50%
   $ sudo parted /dev/xvdg mkpart primary ext4 50% 100%
   ```
-1. Para interromper a replicação, execute o comando `ghe-repl-stop`.
-
-   ```shell
-   $ ghe-repl-stop
-   ```
-
-1. Execute o comando `ghe-upgrade` para instalar um pacote completo específico da plataforma no disco recém-particionado. Pacotes de atualização de hotpatch universais, como `github-enterprise-2.11.9.hpkg`, não funcionarão conforme o esperado. Depois que o comando `ghe-upgrade` for concluído, os serviços do aplicativo serão encerrados automaticamente.
+3. Execute o comando `ghe-upgrade` para instalar um pacote completo específico da plataforma no disco recém-particionado. Pacotes de atualização de hotpatch universais, como `github-enterprise-2.11.9.hpkg`, não funcionarão conforme o esperado. Depois que o comando `ghe-upgrade` for concluído, os serviços do aplicativo serão encerrados automaticamente.
 
   ```shell
   $ ghe-upgrade PACKAGE-NAME.pkg -s -t /dev/xvdg1
   ```
-1. Desligue o appliance:
+4. Desligue o appliance:
   ```shell
   $ sudo poweroff
   ```
-1. No hipervisor, remova o disco raiz antigo e vincule o novo disco raiz no mesmo local do antigo.
-1. Inicie o appliance.
-1. Certifique-se de que os serviços do sistema estejam funcionando corretamente, depois liberar o modo de manutenção. Para obter mais informações, consulte "[Habilitar e programar o modo de manutenção](/admin/guides/installation/enabling-and-scheduling-maintenance-mode)".
-
-Se seu dispositivo estiver configurado para alta disponibilidade ou georreplicação, lembre-se de iniciar a replicação em cada nó de réplica usando `ghe-repl-start` após a atualização do armazenamento em todos os nós.
+5. No hipervisor, remova o disco raiz antigo e vincule o novo disco raiz no mesmo local do antigo.
+6. Inicie o appliance.
+7. Certifique-se de que os serviços do sistema estejam funcionando corretamente, depois liberar o modo de manutenção. Para obter mais informações, consulte "[Habilitar e programar o modo de manutenção](/admin/guides/installation/enabling-and-scheduling-maintenance-mode)".

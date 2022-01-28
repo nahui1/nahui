@@ -17,6 +17,7 @@ shortTitle: QuickStart
 
 {% data reusables.actions.enterprise-beta %}
 {% data reusables.actions.enterprise-github-hosted-runners %}
+{% data reusables.actions.ae-beta %}
 
 ## Introdução
 
@@ -74,7 +75,7 @@ Fazer commit do arquivo de fluxo de trabalho para um branch em seu repositório 
 
    Por exemplo, você pode ver a lista de arquivos no seu repositório: ![Exemplo do detalhe da ação](/assets/images/help/repository/actions-quickstart-log-detail.png)
 
-## Mais fluxos de trabalho iniciais
+## Mais modelos de fluxo de trabalho
 
 {% data reusables.actions.workflow-template-overview %}
 

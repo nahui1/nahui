@@ -20,6 +20,7 @@ shortTitle: Pacotes Java com Maven
 
 {% data reusables.actions.enterprise-beta %}
 {% data reusables.actions.enterprise-github-hosted-runners %}
+{% data reusables.actions.ae-beta %}
 
 ## Introdução
 
@@ -145,7 +146,7 @@ on:
     types: [created]
 jobs:
   publish:
-    runs-on: ubuntu-latest {% ifversion fpt or ghes > 3.1 or ghae or ghec %}
+    runs-on: ubuntu-latest {% ifversion fpt or ghes > 3.1 or ghae-next or ghec %}
     permissions: 
       contents: read
       packages: write {% endif %}
@@ -182,7 +183,7 @@ on:
     types: [created]
 jobs:
   publish:
-    runs-on: ubuntu-latest {% ifversion fpt or ghes > 3.1 or ghae or ghec %}
+    runs-on: ubuntu-latest {% ifversion fpt or ghes > 3.1 or ghae-next or ghec %}
     permissions: 
       contents: read
       packages: write {% endif %}

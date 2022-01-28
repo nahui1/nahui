@@ -26,7 +26,7 @@ Para criar commits em nome de uma organização:
   - `org` é o login da organização
   - `name@organization.com` está no domínio da organização
 
-As organizações podem usar o e-mail `name@organization.com` como um ponto público de contato para esforços de código aberto.
+A organização pode usar o e-mail `name@organization.com` como um ponto público de contato para esforços de código aberto.
 
 ## Criar commits com um selo `on-behalf-of` na linha de comando
 

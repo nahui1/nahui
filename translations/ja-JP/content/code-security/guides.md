@@ -2,7 +2,7 @@
 title: コードセキュリティのためのガイド
 intro: 'コードのセキュリティの改善を{% data variables.product.product_name %}が支援する様々な方法について学んでください。'
 allowTitleToDifferFromFilename: true
-layout: product-guides
+layout: product-sublanding
 versions:
   fpt: '*'
   ghes: '*'

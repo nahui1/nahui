@@ -10,7 +10,7 @@ topics:
 redirect_from:
   - /github/setting-up-and-managing-your-github-user-account/managing-security-and-analysis-settings-for-your-user-account
   - /github/setting-up-and-managing-your-github-user-account/managing-user-account-settings/managing-security-and-analysis-settings-for-your-user-account
-shortTitle: セキュリティと分析の管理
+shortTitle: Manage security & analysis
 ---
 
 ## セキュリティおよび分析設定の管理について

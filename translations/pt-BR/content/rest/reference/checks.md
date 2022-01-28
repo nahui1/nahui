@@ -1,6 +1,6 @@
 ---
 title: Verificações
-intro: 'Com a API de verificações, você pode criar {% data variables.product.prodname_github_apps %} que executa verificações poderosas para as alterações de código em um repositório.'
+intro: 'With the Checks API, you can build {% data variables.product.prodname_github_apps %} that run powerful checks against the code changes in a repository.'
 redirect_from:
   - /v3/checks
 versions:

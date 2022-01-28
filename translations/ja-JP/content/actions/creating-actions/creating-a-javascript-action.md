@@ -20,6 +20,7 @@ shortTitle: JavaScript action
 
 {% data reusables.actions.enterprise-beta %}
 {% data reusables.actions.enterprise-github-hosted-runners %}
+{% data reusables.actions.ae-beta %}
 
 ## はじめに
 
@@ -37,9 +38,9 @@ shortTitle: JavaScript action
 
 Before you begin, you'll need to download Node.js and create a public {% data variables.product.prodname_dotcom %} repository.
 
-1. Download and install Node.js {% ifversion fpt or ghes > 3.3 or ghae-issue-5504 or ghec %}16.x{% else %}12.x{% endif %}, which includes npm.
+1. Node.js 12.x をダウンロードして、インストールします。npm も Node.js 12.x に含まれています。
 
-  {% ifversion fpt or ghes > 3.3 or ghae-issue-5504 or ghec %}https://nodejs.org/en/download/{% else %}https://nodejs.org/en/download/releases/{% endif %}
+  https://nodejs.org/en/download/current/
 
 1. Create a new public repository on {% data variables.product.product_location %} and call it "hello-world-javascript-action". 詳しい情報については、「[新しいリポジトリの作成](/articles/creating-a-new-repository)」を参照してください。
 
@@ -47,13 +48,13 @@ Before you begin, you'll need to download Node.js and create a public {% data va
 
 1. ターミナルから、ディレクトリを新しいリポジトリに変更します。
 
-  ```shell{:copy}
+  ```shell
   cd hello-world-javascript-action
   ```
 
 1. From your terminal, initialize the directory with npm to generate a `package.json` file.
 
-  ```shell{:copy}
+  ```shell
   npm init -y
   ```
 
@@ -61,7 +62,7 @@ Before you begin, you'll need to download Node.js and create a public {% data va
 
 Create a new file named `action.yml` in the `hello-world-javascript-action` directory with the following example code. 詳しい情報については、「[{% data variables.product.prodname_actions %} のメタデータ構文](/actions/creating-actions/metadata-syntax-for-github-actions)」を参照してください。
 
-```yaml{:copy}
+```yaml
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
@@ -73,7 +74,7 @@ outputs:
   time: # id of output
     description: 'The time we greeted you'
 runs:
-  using: {% ifversion fpt or ghes > 3.3 or ghae-issue-5504 or ghec %}'node16'{% else %}'node12'{% endif %}
+  using: 'node12'
   main: 'index.js'
 ```
 
@@ -91,7 +92,7 @@ runs:
 
 ターミナルで、アクションツールキットの `core` および `github` パッケージをインストールします。
 
-```shell{:copy}
+```shell
 npm install @actions/core
 npm install @actions/github
 ```
@@ -107,7 +108,7 @@ GitHub Actions は、webhook イベント、Git ref、ワークフロー、ア�
 以下のコードで、`index.js` と名付けた新しいファイルを追加してください。
 
 {% raw %}
-```javascript{:copy}
+```javascript
 const core = require('@actions/core');
 const github = require('@actions/github');
 
@@ -173,7 +174,7 @@ with:
 
 アクションのリリースにはバージョンタグを加えることもベストプラクティスです。 アクションのバージョン管理の詳細については、「[アクションについて](/actions/automating-your-workflow-with-github-actions/about-actions#using-release-management-for-actions)」を参照してください。
 
-```shell{:copy}
+```shell
 git add action.yml index.js node_modules/* package.json package-lock.json README.md
 git commit -m "My first action is ready"
 git tag -a -m "My first action release" v1.1
@@ -213,7 +214,7 @@ This example demonstrates how your new public action can be run from within an e
 Copy the following YAML into a new file at `.github/workflows/main.yml`, and update the `uses: octocat/hello-world-javascript-action@v1.1` line with your username and the name of the public repository you created above. `who-to-greet`の入力を自分の名前に置き換えることもできます。
 
 {% raw %}
-```yaml{:copy}
+```yaml
 on: [push]
 
 jobs:
@@ -240,7 +241,7 @@ When this workflow is triggered, the runner will download the `hello-world-javas
 
 {% raw %}
 **.github/workflows/main.yml**
-```yaml{:copy}
+```yaml
 on: [push]
 
 jobs:

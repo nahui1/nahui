@@ -23,10 +23,7 @@ Para prevenir que los paquetes nuevos se carguen, puedes configurar un ecosistem
 {% data reusables.enterprise_site_admin_settings.access-settings %}
 {% data reusables.enterprise_site_admin_settings.management-console %}
 {% data reusables.enterprise_site_admin_settings.packages-tab %}
-1. Debajo de "Alternación de ecosistema", para cada tipo de paquete, selecciona **Enabled**, **Read-Only**, o **Disabled**.
-{% ifversion ghes > 3.1 %}
-  ![Alternación de ecosistemas](/assets/images/enterprise/site-admin-settings/ecosystem-toggles.png){% else %}
-![Ecosystem toggles](/assets/images/enterprise/3.1/site-admin-settings/ecosystem-toggles.png){% endif %}
+1. Debajo de "Alternación de ecosistema", para cada tipo de paquete, selecciona **Enabled**, **Read-Only**, o **Disabled**. ![Alternación de ecosistemas](/assets/images/enterprise/site-admin-settings/ecosystem-toggles.png)
 {% data reusables.enterprise_management_console.save-settings %}
 
 {% ifversion ghes = 3.0 or ghes > 3.0 %}
@@ -43,8 +40,6 @@ Para permitir las conexiones al registro de npm, deberás configurar las ACLs de
 | {% data variables.product.prodname_ghe_server %} | `registry.npmjs.com` | TCP/443       | HTTPS |
 
 Nota que las conexiones a `registry.npmjs.com` atraviesan por la red de Cloudflare y, subsecuentemente, no se conectan a una IP estática única; en vez de esto, se hace una conexión a una dirección IP dentro de los rangos CIDR que se listan aquí: https://www.cloudflare.com/ips/.
-
-Si quieres habilitar las fuentes ascendentes de npm, selecciona `Enabled` para `npm upstreaming`.
 
 {% endif %}
 

@@ -1,6 +1,6 @@
 ---
 title: Probar tu conexión SSH
-intro: 'Después de que hayas configurado tu llave SSH y la hayas agregado a tu cuenta de {% ifversion ghae %}{% data variables.product.product_name %}{% else %}{% data variables.product.product_location %}{% endif %}, podrás probar tu conexión.'
+intro: 'After you''ve set up your SSH key and added it to your account on {% ifversion ghae %}{% data variables.product.product_name %}{% else %}{% data variables.product.product_location %}{% endif %}, you can test your connection.'
 redirect_from:
   - /articles/testing-your-ssh-connection
   - /github/authenticating-to-github/testing-your-ssh-connection
