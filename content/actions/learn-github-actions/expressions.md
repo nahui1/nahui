@@ -60,7 +60,6 @@ As part of an expression, you can use `boolean`, `null`, `number`, or `string` d
 #### Example
 
 {% raw %}
-
 ```yaml
 env:
   myNull: ${{ null }}
@@ -72,7 +71,6 @@ env:
   myString: Mona the Octocat
   myStringInBraces: ${{ 'It''s open source!' }}
 ```
-
 {% endraw %}
 
 ## Operators
@@ -81,7 +79,7 @@ env:
 | ---         | ---         |
 | `( )`       | Logical grouping |
 | `[ ]`       | Index
-| `.`         | Property de-reference |
+| `.`         | Property dereference |
 | `!`         | Not |
 | `<`         | Less than |
 | `<=`        | Less than or equal |

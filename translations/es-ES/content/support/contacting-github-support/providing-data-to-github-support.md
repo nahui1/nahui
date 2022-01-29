@@ -158,4 +158,4 @@ Puedes cargar directamente un paquete de soporte a nuestro servidor si:
 
 ## Leer más
 
-- "[Acerca del Soporte de GitHub](/support/learning-about-github-support/about-github-support)"
+- "[About GitHub Support](/support/learning-about-github-support/about-github-support)"
