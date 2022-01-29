@@ -117,7 +117,7 @@ export default class Operation {
         const rawResponse = rawResponses[responseCode]
         const httpStatusCode = responseCode
         const httpStatusMessage = httpStatusCodes.getMessage(Number(responseCode))
-        const responseDescription = await renderContent(rawResponse.description)
+        const responseDescription = rawResponse.description
 
         const cleanResponses = []
 

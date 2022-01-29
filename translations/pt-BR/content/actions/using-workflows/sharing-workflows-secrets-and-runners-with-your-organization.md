@@ -20,16 +20,16 @@ type: how_to
 
 Se você precisar compartilhar fluxos de trabalho e outros recursos de {% data variables.product.prodname_actions %} com a sua equipe, considere colaborar dentro de uma organização de {% data variables.product.prodname_dotcom %}. Uma organização permite que você armazene e gerencie, centralizadamente, segredos, artefatos e executores auto-hospedados. Você também pode criar fluxos de trabalho iniciantes no repositório `.github` e compartilhá-los com outros usuários na sua organização.
 
-## Compartilhando {% if internal-actions %}ações e {% endif %}fluxos de trabalho
+## Sharing {% if internal-actions %}actions and {% endif %}workflows
 
 {% if internal-actions %}
-Você pode compartilhar ações individuais e fluxos de trabalho inteiros com sua organização, com ou sem publicar as ações ou fluxos de trabalho publicamente. Você pode reutilizar ações e fluxos de trabalho exatamente referenciando-os no seu arquivo de fluxo de trabalho e você pode criar fluxos de trabalho iniciais que fornecem modelos para novos fluxos de trabalho.
+You can share both individual actions and entire workflows with your organization, with or without publishing the actions or workflows publicly. You can reuse actions and workflows exactly by referencing them in your workflow file, and you can create starter workflows that provide templates for new workflows.
 {% else %}
-A sua organização pode compartilhar fluxos de trabalho reutilizando os fluxos de trabalho exatamente ou criando fluxos de trabalho iniciais que fornecem modelos para novos fluxos de trabalho.
+Your organization can share workflows by reusing the workflows exactly or by creating starter workflows that provide templates for new workflows.
 {% endif %}
 
 {% if internal-actions %}
-### Compartilhando ações com sua empresa
+### Sharing actions with your enterprise
 
 {% data reusables.actions.internal-actions-summary %}
 {% endif %}

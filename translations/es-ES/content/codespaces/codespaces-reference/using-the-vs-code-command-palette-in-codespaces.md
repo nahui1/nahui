@@ -33,7 +33,7 @@ You can access the {% data variables.product.prodname_vscode_command_palette %} 
 
 ## Comandos para los {% data variables.product.prodname_github_codespaces %}
 
-Para ver todos los comandos relacionados con {% data variables.product.prodname_github_codespaces %}, [accede a la {% data variables.product.prodname_vscode_command_palette %}](#accessing-the-command-palette) y luego comienza a teclear "Codespaces".
+To see all commands related to {% data variables.product.prodname_github_codespaces %}, [access the {% data variables.product.prodname_vscode_command_palette %}](#accessing-the-command-palette), then start typing "Codespaces".
 
 ![Una lista de todos los comandos que se relacionan con los codespaces](/assets/images/help/codespaces/codespaces-command-palette.png)
 

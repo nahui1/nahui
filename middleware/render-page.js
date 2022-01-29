@@ -1,4 +1,5 @@
 import { get } from 'lodash-es'
+import QuickLRU from 'quick-lru'
 
 import patterns from '../lib/patterns.js'
 import getMiniTocItems from '../lib/get-mini-toc-items.js'
@@ -7,8 +8,8 @@ import statsd from '../lib/statsd.js'
 import { isConnectionDropped } from './halt-on-dropped-connection.js'
 import { nextApp, nextHandleRequest } from './next.js'
 
-function cacheOnReq(fn) {
-  const cache = new Map()
+function cacheOnReq(fn, minSize = 1024, lruMaxSize = 1000) {
+  const cache = new QuickLRU({ maxSize: lruMaxSize })
 
   return async function (req) {
     const path = req.pagePath || req.path
@@ -31,7 +32,7 @@ function cacheOnReq(fn) {
     }
     const result = await fn(req)
 
-    if (result && isCacheable) {
+    if (result && isCacheable && result.length > minSize) {
       cache.set(path, result)
     }
     return result
@@ -77,7 +78,10 @@ async function buildMiniTocItems(req) {
   return getMiniTocItems(context.renderedPage, page.miniTocMaxHeadingLevel)
 }
 
-const wrapRenderedPage = cacheOnReq(buildRenderedPage)
+// The avergage size of buildRenderedPage() is about 22KB.
+// The median in 7KB. By only caching those larger than 10KB we avoid
+// putting too much into the cache.
+const wrapRenderedPage = cacheOnReq(buildRenderedPage, 10 * 1024)
 
 export default async function renderPage(req, res, next) {
   const { context } = req
